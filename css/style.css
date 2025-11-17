@@ -240,6 +240,69 @@ li{
     position: relative;
 }
 
+/* MOBILE CAROUSEL STYLES */
+@media (max-width: 767.98px) {
+  .lavori-carousel {
+    margin: 10vh 0;
+    border-radius: 40px;
+    background-color: #e5e5e5;
+    min-height: 60vh;
+    position: relative;
+  }
+  .carousel-box-lavori-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-arrow {
+    cursor: pointer;
+    color: #ffff60;
+    font-size: 2.5rem;
+    padding: 0.5rem 1.5rem;
+    user-select: none;
+    transition: background 0.2s;
+    border-radius: 50%;
+    outline: none;
+  }
+  .carousel-arrow:active {
+    background: rgba(255,255,96,0.15);
+  }
+  .carousel-description {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  .carousel-description img,
+  .carousel-description video {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+  }
+  .carousel-box-lavori-wrapper .box-lavori {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .carousel-box-lavori-wrapper .box-lavori .img-wrapper img {
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  .carousel-box-lavori-wrapper .box-lavori .titoletto {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .carousel-box-lavori-wrapper .box-lavori p {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
 .lavori img{
     width: 100%;
     aspect-ratio: 16/9;

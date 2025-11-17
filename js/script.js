@@ -39,3 +39,35 @@ document.querySelectorAll('.box-lavori').forEach(box => {
     if (selected) selected.classList.remove('d-none');
   });
 });
+
+// MOBILE CAROUSEL LOGIC
+const lavoriCarousel = document.querySelector('.lavori-carousel');
+if (lavoriCarousel) {
+  const boxes = lavoriCarousel.querySelectorAll('.carousel-box-lavori-wrapper .box-lavori');
+  const descriptions = lavoriCarousel.querySelectorAll('.carousel-description');
+  const leftArrow = lavoriCarousel.querySelector('.left-arrow');
+  const rightArrow = lavoriCarousel.querySelector('.right-arrow');
+  let currentIndex = 0;
+
+  function showBox(index) {
+    boxes.forEach((box, i) => {
+      box.classList.toggle('d-none', i !== index);
+    });
+    descriptions.forEach((desc, i) => {
+      desc.classList.toggle('d-none', i !== index);
+    });
+  }
+
+  leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + boxes.length) % boxes.length;
+    showBox(currentIndex);
+  });
+
+  rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % boxes.length;
+    showBox(currentIndex);
+  });
+
+  // Initialize carousel
+  showBox(currentIndex);
+}
