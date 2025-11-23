@@ -81,7 +81,8 @@ li{
 }
 
 .hw-mobile{
-    margin: 8vh 0;
+    margin-bottom: 8vh;
+    margin-top: 4vh;
     padding-bottom: 10px;
     padding-top: 20px;
 }
