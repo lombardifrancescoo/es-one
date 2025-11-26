@@ -79,7 +79,7 @@ navLinks.forEach(link => {
 // Create IntersectionObserver options
 const observerOptions = {
   root: null, // viewport
-  rootMargin: '-20% 0px -70% 0px', // Trigger when 20% from top and 70% from bottom
+  rootMargin: '-30% 0px -40% 0px', // Trigger when 20% from top and 70% from bottom
   threshold: 0 // Trigger as soon as any part is visible
 };
 
