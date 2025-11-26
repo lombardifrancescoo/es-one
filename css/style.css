@@ -11,7 +11,10 @@ html, body{
      scroll-behavior: smooth;
      scrollbar-width: none;
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .font-1 {
   font-weight: 800;
   color: #0C684F;
@@ -55,8 +58,11 @@ html, body{
     color: #fff;
     border-top-left-radius: 10px;
 }
-#hello-world, #passioni, #lavori{
+#hello-world, #passioni{
     scroll-margin-top: 20vh;
+}
+#lavori{
+    scroll-margin-top: 10vh;
 }
 .nav-list{
     list-style: none;
