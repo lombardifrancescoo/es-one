@@ -14,7 +14,19 @@ html, body{
 a{
     text-decoration: none;
     color: inherit;
+    transition: color 0.2s ease;
 }
+
+.visible{
+    color: #FF261F !important;
+}
+
+a:hover{
+    color:#ffff60;
+    cursor: pointer;
+}
+
+
 .font-1 {
   font-weight: 800;
   color: #0C684F;
@@ -406,4 +418,8 @@ a{
   .img-wrapper::after {
     content: '';
     background: #fff;
+}
+
+a:hover{
+    color: inherit;
 }}
