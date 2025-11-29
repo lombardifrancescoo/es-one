@@ -6,7 +6,7 @@ document.querySelector('.passioni').addEventListener('click', function() {
   const img = this.querySelector('.img-pass');
   
   paragraphs.forEach(p => {
-    p.classList.toggle('d-block');
+    p.classList.toggle('d-flex');
     p.classList.toggle('d-none');
   });
   
