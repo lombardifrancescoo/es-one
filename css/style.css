@@ -231,27 +231,16 @@ a:hover{
 .passioni{
     margin: 30vh 0;
     border-radius: 40px;
-    height: 60vh;
+    min-height: 60vh;
     background-color: #e5e5e5;
     position: relative;
     outline: 10px solid transparent;
     transition: outline-color 1.5s ease;
 }
 
-.passioni .container-fluid {
-    height: 100%;
-}
-
-.passioni .row {
-    height: 100%;
-}
-
-.passioni .col-md-6 {
-    height: 100%;
-}
-
 .passioni .img-wrapper {
-    height: 100%;
+    height: 60vh;
+    min-height: 400px;
     margin-right: -0.75rem;
 }
 
@@ -274,8 +263,15 @@ a:hover{
  width: 1.5rem;   
 }
 
-.paragrafi p{
-    min-height: 35vh;
+.passioni .col-md-4{
+    position: relative;
+}
+
+.paragrafi div{
+   position: absolute; 
+   left: 50%;
+   bottom: 3rem;
+    transform: translateX(-50%);
 }
 
 .lavori{
@@ -443,3 +439,9 @@ a:hover{
 a:hover{
     color: inherit;
 }}
+
+@media (max-width: 1000px) {
+.passioni .img-wrapper {
+    min-height: 600px;
+}
+}
