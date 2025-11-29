@@ -166,12 +166,22 @@ a:hover{
     opacity: 1;
 }
 
-.hello-world p{
+.hello-world p, .hello-world.clicked .clicca{
     display: none;
 }
 
 .hello-world.clicked p{
     display: block;
+}
+
+.clicca{
+    display: flex;
+    gap: 5px;
+}
+
+.clicca svg, .clicca img{
+    width: 1rem;
+    margin-bottom: 2px;
 }
 
 .wrapper {
@@ -260,6 +270,9 @@ a:hover{
     cursor: pointer;
 }
 
+.passioni svg{
+ width: 1.5rem;   
+}
 .lavori{
    margin: 30vh 0;
     border-radius: 40px;
@@ -333,8 +346,6 @@ a:hover{
 .quarta-img{
     border-bottom-right-radius: 30px;
 }
-/* .img-wrapper img.l1 + ::after,
-.img-wrapper img.l4 + ::after {} */
 
 .img-wrapper:has(img.l1)::after {
     border-top-left-radius: 30px;
@@ -377,7 +388,7 @@ a:hover{
     padding: 0.5rem 1.5rem;
     padding-top: 0;
     user-select: none;
-    transition: background 0.2s;
+    /* transition: background 0.2s; */
     border-radius: 50%;
     outline: none;
   }
