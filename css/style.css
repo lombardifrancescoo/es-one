@@ -329,8 +329,12 @@ a:hover{
 .img-wrapper img.l4 {
     border-top-right-radius: 30px;
 }
-.img-wrapper img.l1 + ::after,
-.img-wrapper img.l4 + ::after {}
+
+.quarta-img{
+    border-bottom-right-radius: 30px;
+}
+/* .img-wrapper img.l1 + ::after,
+.img-wrapper img.l4 + ::after {} */
 
 .img-wrapper:has(img.l1)::after {
     border-top-left-radius: 30px;
