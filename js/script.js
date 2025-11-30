@@ -37,20 +37,23 @@ document.querySelectorAll('.box-lavori').forEach(box => {
 const lavoriCarousel = document.querySelector('.lavori-carousel');
 if (lavoriCarousel) {
   const boxes = lavoriCarousel.querySelectorAll('.carousel-box-lavori-wrapper .box-lavori');
-  const descriptions = lavoriCarousel.querySelectorAll('.carousel-description');
-  const leftArrow = lavoriCarousel.querySelector('.left-arrow');
-  const rightArrow = lavoriCarousel.querySelector('.right-arrow');
-  let currentIndex = 0;
+const descriptions = lavoriCarousel.querySelectorAll('.carousel-description');
+const leftArrow = lavoriCarousel.querySelector('.left-arrow');
+const rightArrow = lavoriCarousel.querySelector('.right-arrow');
+const nlavoro = lavoriCarousel.querySelector('.nlavoro');
+let currentIndex = 0;
 
-  function showBox(index) {
-    boxes.forEach((box, i) => {
-      box.classList.toggle('d-none', i !== index);
-    });
-    descriptions.forEach((desc, i) => {
-      desc.classList.toggle('d-none', i !== index);
-    });
+function showBox(index) {
+  boxes.forEach((box, i) => {
+    box.classList.toggle('d-none', i !== index);
+  });
+  descriptions.forEach((desc, i) => {
+    desc.classList.toggle('d-none', i !== index);
+  });
+  if (nlavoro) {
+    nlavoro.textContent = `${index + 1}/${boxes.length}`;
   }
-
+}
   leftArrow.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + boxes.length) % boxes.length;
     showBox(currentIndex);

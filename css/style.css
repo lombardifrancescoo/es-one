@@ -183,7 +183,7 @@ a:hover{
 
 .clicca svg, .clicca img{
     width: 1rem;
-    margin-bottom: 2px;
+    margin-bottom: -1.5px;
 }
 
 .wrapper {
@@ -333,8 +333,9 @@ a:hover{
     display: block;
     width: 100%;
     height: auto;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
+    border-radius: 15px;
 }  
 
 .descrizioni img, .descrizioni video{
@@ -383,11 +384,14 @@ a:hover{
 /* MOBILE CAROUSEL STYLES */
 @media (max-width: 767.98px) {
   .lavori-carousel {
-    margin: 10vh 0;
     border-radius: 40px;
     background-color: #e5e5e5;
     min-height: 60vh;
     position: relative;
+    margin-bottom: 8vh;
+    margin-top: 4vh;
+    padding-bottom: 10px;
+    padding-top: 20px;
   }
   .carousel-box-lavori-wrapper {
     width: 100%;
@@ -439,7 +443,7 @@ a:hover{
   }
   .carousel-box-lavori-wrapper .box-lavori .titoletto {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   .carousel-box-lavori-wrapper .box-lavori p{
     text-align: center;
@@ -447,6 +451,14 @@ a:hover{
   .img-wrapper::after {
     content: '';
     background: #fff;
+}
+
+.comandi-carousel{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 a:hover{
