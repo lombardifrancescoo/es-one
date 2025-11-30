@@ -19,18 +19,59 @@ document.querySelector('.passioni').addEventListener('click', function() {
   }
 });
 
-document.querySelectorAll('.box-lavori').forEach(box => {
-  box.addEventListener('click', () => {
+const fadeOutPromise = (el) => new Promise((resolve) => {
+  if (!el.classList.contains('d-none')) {
+    el.style.opacity = '0';
+    setTimeout(() => {
+      el.classList.add('d-none');
+      el.style.opacity = '';
+      resolve();
+    }, 250);
+  } else {
+    resolve();
+  }
+});
+
+const fadeIn = (el) => {
+  el.classList.remove('d-none');
+  el.style.opacity = '0';
+  el.offsetHeight; // Trigger reflow
+  el.style.opacity = '1';
+};
+
+document.querySelectorAll('#lavori .box-lavori').forEach(box => {
+  box.addEventListener('click', async () => {
     const img = box.querySelector('img');
     if (!img) return;
     const target = img.classList[0];
     
-    document.querySelectorAll('.descrizioni > div[class^="l"]').forEach(desc => {
-      desc.classList.add('d-none');
-    });
-    
+    const vuoto = document.querySelector('.vuoto');
+    const eliminare = document.querySelector('.eliminare');
+    const descriptions = document.querySelectorAll('.descrizioni > div[class^="l"]');
     const selected = document.querySelector('.descrizioni > .' + target);
-    if (selected) selected.classList.remove('d-none');
+    
+    // Fade out all descriptions first and await completion
+    await Promise.all(Array.from(descriptions).map(fadeOutPromise));
+    
+    const handleTransitionEnd = () => {
+      vuoto.removeEventListener('transitionend', handleTransitionEnd);
+      if (eliminare) eliminare.classList.add('d-none');
+      if (selected) fadeIn(selected);
+    };
+    
+    if (vuoto && vuoto.classList.contains('expanded')) {
+      // Already expanded: immediate switch after fade out
+      if (eliminare) eliminare.classList.add('d-none');
+      if (selected) fadeIn(selected);
+    } else if (vuoto) {
+      // Expanding: wait for transition after fade out
+      vuoto.addEventListener('transitionend', handleTransitionEnd);
+      vuoto.classList.add('expanded');
+    } else {
+      // Fallback
+      if (eliminare) eliminare.classList.add('d-none');
+      if (selected) fadeIn(selected);
+    }
   });
 });
 

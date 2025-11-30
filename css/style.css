@@ -346,6 +346,8 @@ a:hover{
 .l1, .l2, .l3, .l4 {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    opacity: 1;
+    transition: opacity 0.25s ease;
 }
 
 .img-wrapper::after {
@@ -379,6 +381,15 @@ a:hover{
     padding-right: 9px;
 }
 
+.vuoto{
+    aspect-ratio: 16/9;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.expanded {
+    width: 100%;
+}
 
 /* MOBILE CAROUSEL STYLES */
 @media (max-width: 767.98px) {
