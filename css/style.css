@@ -33,9 +33,11 @@ a:hover{
 }
 
 .font-2 {
-    font-size: 20px;
-    line-height: 26px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
 }
+
 
 .titoletto{
     font:800 24px 'Funnel Display', Helvetica, sans-serif;
@@ -294,6 +296,10 @@ a:hover{
     object-position: center;
 }
 
+.l4 .col-md-3{
+    margin-bottom: -4.5px;
+}
+
 .box-lavori{
     display: flex;
     flex-direction: column;
@@ -331,8 +337,8 @@ a:hover{
     border-top-right-radius: 15px;
 }  
 
-.quarta-img{
-    border-bottom-right-radius: 30px;
+.descrizioni img, .descrizioni video{
+    border-radius: 15px;
 }
 
 
@@ -360,6 +366,17 @@ a:hover{
 
 .box-lavori:hover .img-wrapper::after {
     opacity: 1;
+}
+
+.descrizioni{
+    border-radius: 15px;
+    background-color: #e5e5e5;
+}
+
+.descrizioni p{
+    align-self: center;
+    padding-left: 9px;
+    padding-right: 9px;
 }
 
 

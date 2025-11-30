@@ -25,11 +25,11 @@ document.querySelectorAll('.box-lavori').forEach(box => {
     if (!img) return;
     const target = img.classList[0];
     
-    document.querySelectorAll('.container-fluid > div[class^="l"]').forEach(desc => {
+    document.querySelectorAll('.descrizioni > div[class^="l"]').forEach(desc => {
       desc.classList.add('d-none');
     });
     
-    const selected = document.querySelector('.container-fluid > .' + target);
+    const selected = document.querySelector('.descrizioni > .' + target);
     if (selected) selected.classList.remove('d-none');
   });
 });
