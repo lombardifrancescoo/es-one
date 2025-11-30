@@ -361,8 +361,7 @@ a:hover{
     mix-blend-mode: multiply;
     transition: opacity 0.3s;
     border-radius: inherit;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    border-radius: 15px;
 }
 
 .box-lavori:hover .img-wrapper::after {
@@ -461,9 +460,22 @@ a:hover{
     align-items: center;
 }
 
+.comandi-carousel img{
+    padding: 5px;
+    width: 1.5rem;
+    overflow: visible;
+}
+
 a:hover{
     color: inherit;
-}}
+}
+
+#hello-worldm{
+    scroll-margin-top: 100px;
+}
+#lavorim, #passionim{
+    scroll-margin-top: 2rem;}
+}
 
 @media (max-width: 1000px) {
 .passioni .img-wrapper {
