@@ -170,3 +170,96 @@ const ancoraElements = document.querySelectorAll('[id^="hello-world"], [id^="pas
 ancoraElements.forEach(element => {
   observer.observe(element);
 });
+
+
+// Create lightbox HTML structure
+const lightboxHTML = `
+  <div class="lightbox-overlay" style="display: none;">
+    <div class="lightbox-content">
+      <button class="lightbox-close">&times;</button>
+      <div class="lightbox-media"></div>
+    </div>
+  </div>
+`;
+
+// Inject lightbox into the DOM
+document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+
+// Get lightbox elements
+const overlay = document.querySelector('.lightbox-overlay');
+const mediaContainer = document.querySelector('.lightbox-media');
+const closeBtn = document.querySelector('.lightbox-close');
+
+// Function to open lightbox
+function openLightbox(element) {
+  const isVideo = element.tagName === 'VIDEO';
+  
+  if (isVideo) {
+    const video = document.createElement('video');
+    video.controls = true;
+    video.autoplay = true;
+    video.loop = element.loop;
+    video.muted = true;
+    
+    // Copy source elements
+    const sources = element.querySelectorAll('source');
+    sources.forEach(source => {
+      const newSource = document.createElement('source');
+      newSource.src = source.src;
+      newSource.type = source.type;
+      video.appendChild(newSource);
+    });
+    
+    mediaContainer.innerHTML = '';
+    mediaContainer.appendChild(video);
+  } else {
+    const img = document.createElement('img');
+    img.src = element.src;
+    img.alt = element.alt;
+    mediaContainer.innerHTML = '';
+    mediaContainer.appendChild(img);
+  }
+  
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+// Function to close lightbox
+function closeLightbox() {
+  overlay.style.display = 'none';
+  document.body.style.overflow = '';
+  
+  // Stop and remove video if present
+  const video = mediaContainer.querySelector('video');
+  if (video) {
+    video.pause();
+    video.currentTime = 0;
+  }
+  mediaContainer.innerHTML = '';
+}
+
+// Add click listeners to all images and videos in .descrizioni
+document.querySelectorAll('.descrizioni img, .descrizioni video').forEach(media => {
+  media.style.cursor = 'pointer';
+  media.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openLightbox(media);
+  });
+});
+
+// Close lightbox on close button click
+closeBtn.addEventListener('click', closeLightbox);
+
+// Close lightbox on overlay click (not content)
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    closeLightbox();
+  }
+});
+
+// Close lightbox on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && overlay.style.display === 'flex') {
+    closeLightbox();
+  }
+});

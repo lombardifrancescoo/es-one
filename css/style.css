@@ -124,7 +124,7 @@ a:hover{
 
 .hello-world{
     margin: 20vh 0;
-    border-radius: 40px;
+    border-radius: 15px;
     background-image: url(../imgs/foto-mia-bm-trasparenza.png);
     background-repeat: no-repeat;
     background-position-x: left;
@@ -157,7 +157,7 @@ a:hover{
     background-repeat: no-repeat;
     background-position: left;
     background-size: auto 100%;
-    border-radius: 40px;
+    border-radius: 15px;
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 50;
@@ -208,7 +208,7 @@ a:hover{
     transform: translate(100%, 0);
     background-color: #e5e5e5;
     z-index: -1;
-    border-radius: 40px;
+    border-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     opacity: 0;
@@ -232,7 +232,7 @@ a:hover{
 
 .passioni{
     margin: 30vh 0;
-    border-radius: 40px;
+    border-radius: 15px;
     min-height: 60vh;
     background-color: #e5e5e5;
     position: relative;
@@ -251,7 +251,7 @@ a:hover{
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 40px;
+    border-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -296,7 +296,7 @@ a:hover{
     object-position: center;
 }
 
-.l4 .col-md-3{
+.descrizioni .col-md-3{
     margin-bottom: -4.5px;
 }
 
@@ -381,6 +381,11 @@ a:hover{
     padding-right: 9px;
 }
 
+.descrizioni .l1 img{
+    filter: contrast(1.3);
+    filter: grayscale(1);
+}
+
 .vuoto{
     aspect-ratio: 16/9;
     width: 0;
@@ -389,6 +394,124 @@ a:hover{
 
 .expanded {
     width: 100%;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay[style*="display: flex"] {
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 50vw;
+  aspect-ratio: 16 / 9;
+}
+
+.lightbox-media {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-media img,
+.lightbox-media video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #ffff60;
+}
+
+/* Make images and videos in descrizioni appear clickable */
+.media-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.media-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffff60;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    transition: opacity 0.3s;
+}
+
+.media-wrapper:hover::after {
+    opacity: 1;
+}
+
+.media-wrapper img,
+.media-wrapper video {
+    display: block;
+    cursor: pointer;
+}
+
+/* cose che riguardano overlay icon */
+
+.overlay-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 18px !important;
+    height: 18px;
+    z-index: 10;
+    border-radius: 0 !important;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 100% !important; 
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.descrizioni .l1 .overlay-icon{
+    filter: contrast(0);
+    filter: grayscale(0);
+}
+
+.box-lavori .overlay-icon{
+    width: 22px !important;
+    height: 22px !important;
 }
 
 /* MOBILE CAROUSEL STYLES */
