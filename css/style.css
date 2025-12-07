@@ -17,10 +17,6 @@ a{
     transition: color 0.2s ease;
 }
 
-.visible{
-    color: #fff !important;
-}
-
 a:hover{
     color:#ffff60;
     cursor: pointer;
@@ -57,8 +53,12 @@ a:hover{
     /* min-height: 50px; */
     background-color: #FF261F;
     z-index: 1000000000000;
-    color: #000;
+    color: #e5e5e5;
     border-bottom-right-radius: 10px;
+}
+
+.visible{
+    color: #000 !important;
 }
 
 .contatti{
@@ -69,7 +69,7 @@ a:hover{
     /* min-height: 50px; */
     background-color: #FF261F;
     z-index: 1000000000000;
-    color: #000;
+    color: #e5e5e5;
     border-top-left-radius: 10px;
 }
 #hello-world, #passioni{
