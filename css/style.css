@@ -76,8 +76,9 @@ a:hover{
     scroll-margin-top: 20vh;
 }
 #lavori{
-    scroll-margin-top: 10vh;
+    scroll-margin-top: 15vh;
 }
+
 .nav-list{
     list-style: none;
     display: flex;
