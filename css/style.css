@@ -54,7 +54,7 @@ a:hover{
     background-color: #FF261F;
     z-index: 1000000000000;
     color: #e5e5e5;
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 15px;
 }
 
 .visible{
@@ -70,7 +70,7 @@ a:hover{
     background-color: #FF261F;
     z-index: 1000000000000;
     color: #e5e5e5;
-    border-top-left-radius: 10px;
+    border-top-left-radius: 15px;
 }
 #hello-world, #passioni{
     scroll-margin-top: 20vh;
@@ -232,7 +232,7 @@ a:hover{
 }
 
 .passioni{
-    margin: 30vh 0;
+    /* margin-bottom: 30vh; */
     border-radius: 15px;
     min-height: 60vh;
     background-color: #e5e5e5;
@@ -255,6 +255,7 @@ a:hover{
     border-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    transition: opacity 0.25s ease;
 }
 
 .passioni:hover{
@@ -278,7 +279,8 @@ a:hover{
 }
 
 .lavori{
-   margin: 30vh 0;
+   margin-top: 30vh;
+   /* margin-bottom: 10vh; */
     border-radius: 40px;
     position: relative;
 }
@@ -345,8 +347,8 @@ a:hover{
 
 
 .l1, .l2, .l3, .l4 {
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     opacity: 1;
     transition: opacity 0.25s ease;
 }
@@ -396,6 +398,20 @@ a:hover{
 .expanded {
     width: 100%;
 }
+
+.descrizioni:not(:has(.expanded)){
+    opacity: 0;
+    margin-bottom: 0;
+    transition: opacity 0.3s ease;
+    transition: margin-bottom 0.3s ease;
+}
+
+.descrizioni:has(.expanded){
+    opacity: 1;
+    margin-bottom: 1.2rem!important;
+}
+
+
 
 .lightbox-overlay {
   position: fixed;
@@ -616,4 +632,18 @@ a:hover{
 .passioni .img-wrapper {
     min-height: 600px;
 }
+}
+
+/* Contact Form Styles */
+.btn-send {
+  border-radius: 15px;
+  background-color: #ff261f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.btn-send:hover {
+  color: #ffff60;
 }

@@ -353,8 +353,8 @@
 
 
 <!-- terzo container "passioni" -->
-<div id="passioni" class="ancora2 passioni mx-4 d-none d-md-flex align-items-center">
-  <div class="container-fluid">
+<div id="passioni" class="ancora2  mx-3 px-1 d-none d-md-flex align-items-center">
+  <div class="container-fluid passioni">
     <div class="row">
       <div class="col-1 d-flex align-items-center justify-content-center">
         <?xml version="1.0" encoding="UTF-8"?>
@@ -444,5 +444,31 @@
     </div>
   </div>
 </div>
+
+<!-- Contact Form -->
+<div class="contact-form mx-3" style="margin-top: 1.2rem;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="p-4" style="border-radius: 15px; background-color: #e5e5e5;">
+          <div class="mb-3 d-flex flex-column">
+            <label for="name" class="form-label">nome</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3 d-flex flex-column">
+            <label for="e-mail" class="form-label">e-mail</label>
+            <input type="text" class="form-control" id="e-mail" required>
+          </div>
+          <div class="mb-3 d-flex flex-column">
+            <label for="message" class="form-label">Messaggio</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-send">Invia</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/script.js"></script>
 </body>

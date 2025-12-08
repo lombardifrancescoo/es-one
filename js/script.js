@@ -1,15 +1,15 @@
 const helloWorld = document.querySelector('.hello-world');
 helloWorld.addEventListener('click', function() { this.classList.add('clicked'); });
 
-document.querySelector('.passioni').addEventListener('click', function() {
+document.querySelector('.passioni').addEventListener('click', async function() {
   const paragraphs = this.querySelectorAll('.paragrafi');
   const img = this.querySelector('.img-pass');
-  
-  paragraphs.forEach(p => {
-    p.classList.toggle('d-flex');
-    p.classList.toggle('d-none');
-  });
-  
+
+  // Fade out image
+  img.style.opacity = '0';
+  await new Promise(resolve => setTimeout(resolve, 250));
+
+  // Change src
   if (img.src.includes('0x1900-000000-80-0-0.jpg')) {
     img.src = 'imgs/outer_wilds.jpg';
     img.alt = 'videogioco';
@@ -17,6 +17,15 @@ document.querySelector('.passioni').addEventListener('click', function() {
     img.src = 'imgs/0x1900-000000-80-0-0.jpg';
     img.alt = 'musica';
   }
+
+  // Toggle paragraphs
+  paragraphs.forEach(p => {
+    p.classList.toggle('d-flex');
+    p.classList.toggle('d-none');
+  });
+
+  // Fade in image
+  img.style.opacity = '1';
 });
 
 const fadeOutPromise = (el) => new Promise((resolve) => {
