@@ -264,7 +264,7 @@ a:hover{
 }
 
 .passioni svg{
- width: 1.5rem;   
+    width: 1.5rem;   
 }
 
 .passioni .col-md-4{
@@ -279,7 +279,7 @@ a:hover{
 }
 
 .lavori{
-   margin-top: 30vh;
+    margin-top: 30vh;
    /* margin-bottom: 10vh; */
     border-radius: 40px;
     position: relative;
@@ -433,7 +433,7 @@ a:hover{
 }
 
 .lightbox-content {
-  position: relative;
+    position: relative;
   width: 50vw;
   aspect-ratio: 16 / 9;
 }
@@ -531,8 +531,34 @@ a:hover{
     height: 22px !important;
 }
 
+/* Contact Form Styles */
+.contact-form {
+  margin-top: 1.2rem;
+  border-radius: 15px;
+  background-color: #e5e5e5;
+  margin-bottom: 20vh;
+}
+
+.btn-send {
+    font: normal 18px / 22px Nunito, Helvetica, sans-serif;
+    font-weight: 800;
+  border-radius: 15px;
+  background-color: #ff261f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.btn-send:hover {
+  color: #ffff60;
+}
+
 /* MOBILE CAROUSEL STYLES */
 @media (max-width: 767.98px) {
+.hw-mobile img{
+    border-radius: 20px;
+}
   .lavori-carousel {
     border-radius: 40px;
     background-color: #e5e5e5;
@@ -617,9 +643,17 @@ a:hover{
     overflow: visible;
 }
 
+.contact-form{
+    border-radius: 0;
+}
+
 a:hover{
     color: inherit;
 }
+
+/* body {
+    padding-bottom: 350px;
+} */
 
 #hello-worldm{
     scroll-margin-top: 100px;
@@ -632,18 +666,4 @@ a:hover{
 .passioni .img-wrapper {
     min-height: 600px;
 }
-}
-
-/* Contact Form Styles */
-.btn-send {
-  border-radius: 15px;
-  background-color: #ff261f;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.2s ease;
-}
-
-.btn-send:hover {
-  color: #ffff60;
 }

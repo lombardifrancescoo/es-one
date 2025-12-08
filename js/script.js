@@ -121,12 +121,16 @@ function showBox(index) {
 // IntersectionObserver for navigation highlighting
 const navList = document.querySelector('.nav-list');
 const navLinks = navList.querySelectorAll('a');
+const contattiLink = document.querySelector('.contatti a');
 
 // Remove focus from links after clicking
 navLinks.forEach(link => {
   link.addEventListener('click', function() {
     this.blur();
   });
+});
+contattiLink.addEventListener('click', function() {
+  this.blur();
 });
 
 // Create IntersectionObserver options
@@ -149,25 +153,31 @@ const observerCallback = (entries) => {
       visibleSections.delete(entry.target.id);
     }
   });
-  
+
   // Clear all visible classes
   navLinks.forEach(link => link.classList.remove('visible'));
-  
+  contattiLink.classList.remove('visible');
+
   // If any section is visible, highlight corresponding links
   if (visibleSections.size > 0) {
     // Get the first visible section (topmost)
     const visibleId = Array.from(visibleSections)[0];
     const baseId = visibleId.replace(/m$/, '');
-    
+
     // Add visible class to matching links
     navLinks.forEach(link => {
       const href = link.getAttribute('href').substring(1);
       const baseHref = href.replace(/m$/, '');
-      
+
       if (baseId === baseHref) {
         link.classList.add('visible');
       }
     });
+
+    // Handle contatti link
+    if (baseId === 'contattami') {
+      contattiLink.classList.add('visible');
+    }
   }
 };
 
@@ -175,7 +185,7 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 // Observe all ancora elements - both desktop and mobile versions
-const ancoraElements = document.querySelectorAll('[id^="hello-world"], [id^="passioni"], [id^="lavori"]');
+const ancoraElements = document.querySelectorAll('[id^="hello-world"], [id^="passioni"], [id^="lavori"], #contattami');
 ancoraElements.forEach(element => {
   observer.observe(element);
 });
