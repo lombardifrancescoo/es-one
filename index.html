@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONE</title>
+  <title>sono francesco!</title>
   <link rel="stylesheet" href="css/bootstrap-grid.css">
   <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="icone/fav-icon.png">
 </head>
 
 
@@ -31,11 +32,12 @@
       </div>
  </div>
 <!-- hello world  -->
-<div id="hello-world" class="ancora1 hello-world mx-5 d-none d-md-flex align-items-center">
+ <div class="sticky-wrapper">
+<div id="hello-world" class="ancora1 hello-world mx-4 d-none d-md-flex">
   <div class="container-fluid">
     <div class="row justify-content-end bg-inter">
       <div class="col-md-6 d-flex align-items-center justify-content-center">
-        <div class="wrapper">
+        <div class="wrapper py-3 d-flex flex-column justify-content-center">
           <h1>Hello world!</h1>
           <div class="clicca">
             <!-- <?xml version="1.0" encoding="UTF-8"?>
@@ -67,7 +69,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <!-- riga 1 per mobile -->
 <div id="hello-worldm" class="ancora1m bg-fascia">
   <div class="mx-2 d-md-none hw-mobile">
@@ -253,7 +255,6 @@
     <!-- fine descrizione -->
   </div>
 </div>
-
 <!-- MOBILE CAROUSEL .lavori -->
 <div id="lavorim" class="ancora3m d-md-none bg-fascia">
   <div class="lavori-carousel mx-2 d-md-none">
@@ -355,7 +356,7 @@
 <!-- terzo container "passioni" -->
 <div id="passioni" class="ancora2  mx-3 px-1 d-none d-md-flex align-items-center">
   <div class="container-fluid passioni">
-    <div class="row">
+    <div class="row gx-0">
       <div class="col-1 d-flex align-items-center justify-content-center">
         <?xml version="1.0" encoding="UTF-8"?>
         <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.96 47.38">
@@ -446,11 +447,20 @@
 </div>
 
 <!-- Contact Form -->
-<div class="mx-md-3 evid" id="contattami">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-6  contact-form">
-        <form class="p-4 pt-3">
+<div class="mx-md-2" style="margin-bottom: 30vh;">
+  <div class="container-fluid px-0 px-md-3">
+    <div class="row gx-1">
+      <div class="col-md-6">
+        <div class="contact-form cit">
+          <div class="p-4 pb-0 d-flex flex-column justify-content-end align-items-end">
+        <p>"The living organism, in a situation determined by the play of energy on the surface of the globe, ordinarily receives more energy than is necessary for maintaining life; the excess energy (wealth) can be used for the growth of a system (e.g., an organism); if the system can no longer grow, or if the excess cannot be completely absorbed in it's growth, it must necessarily be lost without profit; it must be spent, willingly or not, gloriously or catastrophically."</p>
+        <p class="evid">Georges Battaille</p>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="contact-form evid " id="contattami">
+        <form class="p-4 pb-0 pt-3">
           <div class="titoletto mb-2">Contattami</div>
           <div class="mb-3 d-flex flex-column">
             <label for="name" class="form-label">nome</label>
@@ -464,7 +474,10 @@
             <label for="message" class="form-label">messaggio</label>
             <textarea class="form-control" id="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn-send font-1">Invia</button>
+          <div class="d-flex flex-column">
+          <button type="submit" class="btn align-self-end btn-send font-1">Invia</button>
+          </div>
+          </div>
         </form>
       </div>
     </div>
