@@ -590,7 +590,19 @@ a:hover{
   color: #ffff60;
 }
 
+input, textarea {
+  border-radius: 5px;
+}
+
 /* MOBILE CAROUSEL STYLES */
+
+
+@media (max-width: 850px){
+    .cit .evid{
+    position: static;
+}
+}
+
 @media (max-width: 767.98px) {
 .hw-mobile img{
     border-radius: 20px;
@@ -699,10 +711,6 @@ a:hover{
 
 .sticky-wrapper{
     height: auto;
-}
-
-.cit .evid{
-    position: static;
 }
 }
 

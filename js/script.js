@@ -10,11 +10,11 @@ document.querySelector('.passioni').addEventListener('click', async function() {
   await new Promise(resolve => setTimeout(resolve, 250));
 
   // Change src
-  if (img.src.includes('0x1900-000000-80-0-0.jpg')) {
+  if (img.src.includes('visions.jpg')) {
     img.src = 'imgs/outer_wilds.jpg';
     img.alt = 'videogioco';
   } else {
-    img.src = 'imgs/0x1900-000000-80-0-0.jpg';
+    img.src = 'imgs/visions.jpg';
     img.alt = 'musica';
   }
 
@@ -282,3 +282,10 @@ document.addEventListener('keydown', (e) => {
     closeLightbox();
   }
 });
+
+// back to top on refresh
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
