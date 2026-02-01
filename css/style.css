@@ -547,6 +547,7 @@ a:hover{
     border-radius: 100% !important; 
     padding: 5px;
     box-sizing: content-box;
+    pointer-events: none;
 }
 
 .descrizioni .l1 .overlay-icon{

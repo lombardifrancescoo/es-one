@@ -10,11 +10,11 @@ document.querySelector('.passioni').addEventListener('click', async function() {
   await new Promise(resolve => setTimeout(resolve, 250));
 
   // Change src
-  if (img.src.includes('visions.jpg')) {
-    img.src = 'imgs/outer_wilds.jpg';
+  if (img.src.includes('visions.webp')) {
+    img.src = 'imgs/outer_wilds.webp';
     img.alt = 'videogioco';
   } else {
-    img.src = 'imgs/visions.jpg';
+    img.src = 'imgs/visions.webp';
     img.alt = 'musica';
   }
 
